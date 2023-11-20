@@ -73,8 +73,7 @@ Entity::~Entity() {
   }
 
   if (_components.size() > 0) {
-    throw std::runtime_error(
-        "Can't delete entity, someone is grabbing a component!");
+    throw std::invalid_argument("Components still exist");
   }
 
   _components.clear();
